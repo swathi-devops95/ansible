@@ -7,4 +7,12 @@
 
     - name: Printing hai from task2 of play1
       ansible.builtin.debug:
-        msg: "Devops from batch55 of play1"   
+        msg: "Devops from batch55 of play1"  
+
+
+- name: play2
+  hosts: all                          #groupname in the inventory file
+  tasks:
+    - name: Printing hai from task1 of play2
+      ansible.builtin.debug:
+        msg: "olaaaaaa : task1 from  play2"        
