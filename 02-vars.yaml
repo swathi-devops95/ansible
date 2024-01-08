@@ -1,5 +1,4 @@
 
-
 - name: Demo on vars usage       
   hosts: all 
   vars:                         #Global variables:all the tasks of this ppay can access this variable
@@ -11,8 +10,8 @@
 
     - name: Demo on using local variables                #imp: no two tasks should have the same name"
       ansible.builtin.debug:
-        msg: value of the URL {{URL}}
-      vars: 
+        msg: value of the URL's {{URL}}
+      vars:
         URL: task.google.com
 
 # note: if you want to print a variable the enclose the variable in  "{{varname}}" and there is no concept of single quotes
