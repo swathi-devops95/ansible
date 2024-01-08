@@ -13,6 +13,10 @@
         msg: value of the URL's {{URL}}
       vars:
         URL: task.google.com
+    - name: Demo on using undeclared variable
+      ansible.builtin.debug:
+          msg: value of the URL's {{URL}}
+      
 
 # note: if you want to print a variable the enclose the variable in  "{{varname}}" and there is no concept of single quotes
 #If the variables is present in between the string of words ,you dont have toenclose them in quotes.
