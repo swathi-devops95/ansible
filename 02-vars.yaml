@@ -15,8 +15,11 @@
         URL: task.google.com
     - name: Demo on using undeclared variable
       ansible.builtin.debug:
-          msg: value of the URL's {{UR}}
-      
+          msg: value of the URL's {{CLIURL}}
+
+# If you try to print a variable which is not declared it os going to through you an error
+#There are certain condition you are not sure about the value of a variable--then how can you supply it from the command line????
+#ans::: we nee to pass it from the command line    
 
 # note: if you want to print a variable the enclose the variable in  "{{varname}}" and there is no concept of single quotes
 #If the variables is present in between the string of words ,you dont have toenclose them in quotes.
