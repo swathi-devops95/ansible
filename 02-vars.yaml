@@ -9,8 +9,9 @@
       ansible.builtin.debug:
         msg: value of the URL is {{URL}}
 
-    - name: printing the variable name                #imp: no two tasks should have the same name"
+    - name: Demo on using local variables                #imp: no two tasks should have the same name"
       ansible.builtin.debug:
+      vars: task.google.com
         msg: value of the URL  {{URL}}
 
 # note: if you want to print a variable the enclose the variable in  "{{varname}}" and there is no concept of single quotes
