@@ -11,12 +11,12 @@
       ansible.builtin.debug:
         msg: value of the URL is {{URL}}
 
-    - name: Demo on using local variables                #imp: no two tasks should have the same name"
+    - name: Demo on using local variable                #imp: no two tasks should have the same name"
       ansible.builtin.debug:
         msg: value of the URL's {{URL}}
       vars:
         URL: task.google.com
-     - name: Demo on using undeclared variable
+    - name: Demo on using undeclared variable
        ansible.builtin.debug:
            msg: value of the URL's {{CLIURL}}
 
