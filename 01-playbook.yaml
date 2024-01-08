@@ -1,5 +1,5 @@
-- name: play1
-  hosts: all                          #groupname in the inventory file
+- name: play1         # A playbook is always a list so it should start with list i-e -
+  hosts: all          # groupname in the inventory file(inclides everything in inventory file)
   tasks:
     - name: Printing hai from task1 of play1
       ansible.builtin.debug:

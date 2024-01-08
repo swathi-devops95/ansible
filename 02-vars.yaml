@@ -1,0 +1,11 @@
+
+
+- name: play1         # A playbook is always a list so it should start with list i-e -
+  hosts: all 
+  vars:
+    URL: play.google.com         # groupname in the inventory file(inclides everything in inventory file)
+  tasks:
+    - name: printing the variable
+      ansible.builtin.debug:
+        msg: value of the url is {{URL}}
+
