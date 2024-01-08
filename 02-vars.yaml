@@ -1,11 +1,18 @@
 
 
-- name: Demo on vars usage       # A playbook is always a list so it should start with list i-e -
+- name: Demo on vars usage       
   hosts: all 
-  vars:
-    URL: play.google.com         # groupname in the inventory file(inclides everything in inventory file)
+  vars:                         #Global variables:all the tasks of this ppay can access this variable
+    URL: play.google.com         
   tasks:
     - name: printing the variable
       ansible.builtin.debug:
         msg: value of the URL is {{URL}}
+
+    - name: printing the variable name                #imp: no two tasks should have the same name"
+      ansible.builtin.debug:
+        msg: value of the URL  {{URL}}
+
+# note: if you want to print a variable the enclose the variable in  "{{varname}}" and there is no concept of single quotes
+#If the variables is present in between the string of words ,you dont have toenclose them in quotes.
 
