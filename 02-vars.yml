@@ -1,13 +1,13 @@
 
-- name: Demo on vars usage    #play name   
-  hosts: all                  #which includes everthing in inv file
-  vars:                         #Global variables:all the tasks of this play can access this variable
+- name: Demo on vars usage                  #play name   
+  hosts: all                                #which includes everthing in inv file
+  vars:                                     #Global variables:all the tasks of this play can access this variable
     URL: play.google.com 
   vars_prompt:
     - name: URNAME
       promt: Enter your name      
   tasks:
-    - name: printing the variable       #task1 name
+    - name: printing the variable          #task1 name
       ansible.builtin.debug:
         msg: value of the URL is {{URL}}
 
@@ -16,7 +16,7 @@
         msg: value of the URL's {{URL}}
       vars:
         URL: task.google.com
-    # - name: Demo on using undeclared variable         task3 name
+    # - name: Demo on using undeclared variable        task3 name
     #    ansible.builtin.debug:
     #        msg: value of the URL's {{CLIURL}}
 
