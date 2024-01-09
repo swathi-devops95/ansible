@@ -3,6 +3,8 @@
   hosts: all                                #which includes everthing in inv file
   vars:                                     #Global variables:all the tasks of this play can access this variable
     URL: play.google.com 
+  vars_files:
+    - dev.yml
   vars_prompt:
     - name: URNAME
       prompt: Enter your name 
@@ -21,9 +23,13 @@
      # ansible.builtin.debug:
        #   msg: value of the URL's {{CLIURL}}
 
-    - name: printing promt variable                    # task4 name
+    # - name: printing promt variable                    # task4 name
+    #   ansible.builtin.debug:
+    #     msg: name of the person is {{URNAME}}
+
+    - name: This is env specific                        #task5 name
       ansible.builtin.debug:
-        msg: name of the person is {{URNAME}}
+        msg: Type of instance to be used is {{INS_TYPE}}
 
 
 # If you try to print a variable which is not declared it os going to through you an error
