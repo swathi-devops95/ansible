@@ -1,0 +1,12 @@
+
+- name: Demo on facts                        #play name   
+  hosts: all                                #which includes everthing in inv file                  
+  tasks:
+    - name: printing the default  variable         
+      ansible.builtin.debug:
+        msg: server falvour is "{{ansible_distribution}}"
+
+
+### facts are nothing but a properties which will act as a predefined variable" that is why we have not declared variable here"
+
+   
