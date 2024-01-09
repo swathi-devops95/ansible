@@ -29,7 +29,7 @@
 
     - name: This is env specific                        #task5 name
       ansible.builtin.debug:
-        msg: Type of instance to be used is {{INS_TYPE}}
+        msg: Type of instance to be used  {{INS_TYPE}}
 
 
 # If you try to print a variable which is not declared it os going to through you an error
