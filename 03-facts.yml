@@ -4,7 +4,11 @@
   tasks:
     - name: printing the default  variable         
       ansible.builtin.debug:
-        msg: server falvour is {{ansible_distribution}}
+        msg: server falvour is "{{ansible_distribution}}" 
+        
+    - name: printing the Mac address       
+      ansible.builtin.debug:
+        msg: Mc address of the node is  "{{ansible_default_ipv4.macaddress}}"            #even if you dont mention quotes""" also it will work
 
 
 ### facts are nothing but a properties which will act as a predefined variable" that is why we have not declared variable here"
