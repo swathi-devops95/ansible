@@ -5,7 +5,8 @@
     URL: play.google.com 
   vars_prompt:
     - name: URNAME
-      prompt: Enter your name      
+      prompt: Enter your name 
+      private: false                         #by default promt variables are used for secrets  
   tasks:
     - name: printing the variable          #task1 name
       ansible.builtin.debug:
@@ -16,9 +17,9 @@
         msg: value of the URL's {{URL}}
       vars:
         URL: task.google.com
-    - name: Demo on using undeclared variable        task3 name
-      ansible.builtin.debug:
-          msg: value of the URL's {{CLIURL}}
+   # - name: Demo on using undeclared variable        task3 name
+     # ansible.builtin.debug:
+       #   msg: value of the URL's {{CLIURL}}
 
     - name: printing promt variable                    # task4 name
       ansible.builtin.debug:
