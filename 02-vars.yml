@@ -5,7 +5,7 @@
     URL: play.google.com 
   vars_prompt:
     - name: URNAME
-      promt: Enter your name      
+      prompt: Enter your name      
   tasks:
     - name: printing the variable          #task1 name
       ansible.builtin.debug:
