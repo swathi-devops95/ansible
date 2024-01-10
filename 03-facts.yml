@@ -1,7 +1,7 @@
 
 - name: Demo on facts                        #play name   
-  hosts: all  
-  #gather_facts: no                              #which includes everthing in inv file                  
+  hosts: all 
+  gather_facts: no                               #which includes everthing in inv file                  
   tasks:
     - name: printing the default  variable         
       ansible.builtin.debug:
