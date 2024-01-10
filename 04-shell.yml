@@ -13,11 +13,11 @@
       
     - name: Declaring the variable         
       set_fact: 
-      EXITCODE: "{{OUT.rc}}"
+       EXITCODE: "{{OUT.rc}}"
 
          
-    - name: Printing the variable 
+    - name: Printing the uptime exit code
       ansible.builtin.debug:     
-       msg: "{{EXITCODE}}"
+       msg: uptime exit code is "{{EXITCODE}}"
 
   
