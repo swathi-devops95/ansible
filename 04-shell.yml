@@ -1,0 +1,13 @@
+
+- name: Demo on shell                        #play name   
+  hosts: all                                 #which includes everthing in inv file
+  #gather_facts: no                          #if you dont needs facts to be gathered then ,then we can mention this as no              
+  tasks:
+    - name: Running uptime command         
+      ansible.builtin.shell: uptime
+      register: OUT
+
+    - name: printing the uptime         
+      ansible.builtin.debug: 
+       msg: "{{OUT}}""
+  
