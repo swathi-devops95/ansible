@@ -1,7 +1,7 @@
 
 - name: Demo on facts                        #play name   
   hosts: all  
-  gather_facts: no                              #which includes everthing in inv file                  
+  #gather_facts: no                              #which includes everthing in inv file                  
   tasks:
     - name: printing the default  variable         
       ansible.builtin.debug:
@@ -9,7 +9,7 @@
         
     - name: printing the Mac address       
       ansible.builtin.debug:
-        msg: Mc address of the node is  "{{ansible_default_ipv4.macaddress}}"            #even if you dont mention quotes""" also it will work
+        msg: Mac address of the node is  "{{ansible_default_ipv4.macaddress}}"            #even if you dont mention quotes""" also it will work
 
 
 ### facts are nothing but a properties which will act as a predefined variable" that is why we have not declared variable here"
