@@ -1,0 +1,14 @@
+#"If any task fail in the playbook the sub-sequent task will be failed and playbook will be "executed"
+
+- name: Demo on errors
+  hosts: all
+  tasks:
+   - name: check tomcat is running or not
+     ansible.builtin.shell: ps -ef | grep java | grep -v grep
+     register: OUT
+     ignore_errors: yes
+
+
+   - name: starting tomcat
+     ansible.builtin.debug:
+       msg: tomcat is started 
