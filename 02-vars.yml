@@ -1,29 +1,29 @@
 
-- name: Demo on vars usage                  #play name   
-  hosts: all                                #which includes everthing in inv file
-  vars:                                     #Global variables:all the tasks of this play can access this variable
+- name: Demo on vars usage                         #play name   
+  hosts: all                                        #which includes everthing in inv file
+  vars:                                             #Global variables:all the tasks of this play can access this variable
     URL: play.google.com 
   vars_files:
     - "{{ENV}}.yml"
   vars_prompt:
     - name: URNAME
       prompt: Enter your name 
-      private: false                         #by default promt variables are used for secrets  
+      private: false                               #by default promt variables are used for secrets  
   tasks:
-    - name: printing the variable          #task1 name
+    - name: printing the variable                  #task1 name
       ansible.builtin.debug:
         msg: value of the URL is {{URL}}
 
-    - name: Demo on using local variable    #task2 name            #imp: no two tasks should have the same name"
+    - name: Demo on using local variable            #task2 name            #imp: no two tasks should have the same name"
       ansible.builtin.debug:
         msg: value of the URL's {{URL}}
       vars:
         URL: task.google.com
-   # - name: Demo on using undeclared variable        task3 name
+   # - name: Demo on using undeclared variable       task3 name
      # ansible.builtin.debug:
        #   msg: value of the URL's {{CLIURL}}
 
-    # - name: printing promt variable                    # task4 name
+    # - name: printing promt variable                # task4 name
     #   ansible.builtin.debug:
     #     msg: name of the person is {{URNAME}}
 
