@@ -16,7 +16,7 @@
 
     - name: Run this action
       ansible.builtin.debug:
-        msg: Action is true
+        msg: Action is false
       when: action   
   
 
