@@ -21,12 +21,12 @@
         msg: Installing backend
       tags: backend
 
-    - name: This is a DB tasks
+    - name: This is a Db tasks
       ansible.builtin.debug:
-        msg: Installing DB
-      tags: DB
+        msg: Installing Db
+      tags: db
 
-    - name: starting DB
+    - name: starting Db
       ansible.builtin.debug:
-        msg: starting DB
-     tags: DB
+        msg: starting Db
+     tags: db
