@@ -3,7 +3,7 @@
   tasks:
     - name: Run this only when the system distribution is CentOS
       ansible.builtin.debug:
-        msg: Welcome to CentOS {{ansible_distribution}}
+        msg: Welcome to CentOS          #{{ansible_distribution}}
       when: ansible_distribution == "CentOS"
   
 
