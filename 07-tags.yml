@@ -4,23 +4,29 @@
     - name: This is a frontend tasks
       ansible.builtin.debug:
         msg: Installing frontend
+      tags: frontend
 
     - name: starting frontend
       ansible.builtin.debug:
         msg: starting frontend
+      tags: frontend
 
     - name: This is a backend tasks
       ansible.builtin.debug:
         msg: backend frontend
+      tags: backend
 
     - name: starting backend
       ansible.builtin.debug:
         msg: Installing backend
+      tags: backend
 
     - name: This is a DB tasks
       ansible.builtin.debug:
         msg: Installing DB
+      tags: DB
 
     - name: starting DB
       ansible.builtin.debug:
         msg: starting DB
+     tags: DB
