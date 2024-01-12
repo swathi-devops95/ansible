@@ -13,12 +13,12 @@
 
     - name: This is a backend tasks
       ansible.builtin.debug:
-        msg: backend frontend
+        msg: installing backend
       tags: backend
 
     - name: starting backend
       ansible.builtin.debug:
-        msg: Installing backend
+        msg: starting  backend
       tags: backend
 
     - name: This is a Db tasks
@@ -26,7 +26,8 @@
         msg: Installing Db
       tags: Db
 
-    # - name: starting Db
-    #   ansible.builtin.debug:
-    #     msg: starting Db
+    - name: starting Db
+      ansible.builtin.debug:
+        msg: starting Db
+      tags: Db
     
