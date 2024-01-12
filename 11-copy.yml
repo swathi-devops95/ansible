@@ -1,0 +1,7 @@
+- name: Demo on copy
+  hosts: all
+  tasks:
+   - name: copying the file
+     ansible.builtin.copy:
+       src: systemd.service
+       dest: /home/centos/systemd.service
