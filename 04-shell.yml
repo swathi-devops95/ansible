@@ -5,8 +5,9 @@
   tasks:
     - name: Running uptime command         
       ansible.builtin.shell: uptime
-      register: OUT
-
+      register: OUT                       #shell module is going to run the commnd but will not show you the output
+                                            #so we need to store that output,here register is a key word whre we register the output
+                                            #in the variable called as OUT and can use it whenever we want,the variable name need not to be an "out" it cn be something ele also
     - name: printing the uptime         
       ansible.builtin.debug: 
        msg: "{{OUT.stdout}}"
