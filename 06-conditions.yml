@@ -6,7 +6,7 @@
     - name: Run this only when the system distribution is CentOS
       ansible.builtin.debug:
         msg: Welcome to {{ansible_distribution}}
-      when: ansible_distribution == "CentOS"
+      when: ansible_distribution == "CentOS"            #Here when is a condition
 
 
     - name: Run this only when the system distribution is Ubuntu
@@ -23,24 +23,13 @@
     - name: Run this only when the action variable is defined
       ansible.builtin.debug:
         msg: action variable is declared
-      when: action is defined
+      when: action is defined                       #THIS WILL BE EXECUTED BECAUSE THE ACTION VARIABLE IS DECLARED
 
 
     - name: Run this only when the action variable is defined
       ansible.builtin.debug:
         msg: Action variable is declared
-      when: action is not defined
-
-
-
-
-
-
-
-
-
-
-
+      when: action is not defined                 # this won be executed because action variable is declare ,the tsk wil be skipped
 
 
 ## Older versions of ansible uses undefined, #latest version of ansible users not defined 
