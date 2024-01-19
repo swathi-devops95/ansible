@@ -1,5 +1,4 @@
   - name: Installing Nginx
-    hosts: all
     ansible.builtin.package:
       name: nginx
       state: present
@@ -11,7 +10,7 @@
       remote_src: yes           #downloads the file and extract  on top of remote server/machine
 
 
-  - name: performong cleaning
+  - name: performing cleaning
     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
