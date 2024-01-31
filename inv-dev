@@ -2,4 +2,4 @@
 frontend-dev.roboshop.internal
 
 [mongodb]
-mongod-dev.roboshop.internal
+mongodb-dev.roboshop.internal
