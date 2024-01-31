@@ -15,5 +15,9 @@
       state: restarted
       enabled: yes
 
+
+ - name: configuring server name
+   ansible.builtin.shell: set-hostname {{COMPONENT}}
+
      
 
