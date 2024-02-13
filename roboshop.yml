@@ -3,4 +3,4 @@
   hosts: "{{COMPONENT}}"
   roles:
     - "{{COMPONENT}}"
-    - 
+     
