@@ -3,15 +3,15 @@
   hosts: all                                 #which includes everthing in inv file
   #gather_facts: no                          #if you dont needs facts to be gathered then ,then we can mention this as no              
   tasks:
-    - name: printing the default  variable         
+    - name: printing the default  variable        #task-1       
       ansible.builtin.debug:
-        msg: server falvour is "{{ansible_distribution}}" 
-        
-    - name: printing the Mac address       
+        msg: server falvour is "{{ansible_distribution}}"     #since ansible_distribution is a predefined (system variable) we can print it directly
+
+    - name: printing the Mac address              #task-2     
       ansible.builtin.debug:
         msg: Mac address of the node is  "{{ansible_default_ipv4.macaddress}}"            #even if you dont mention quotes""" also it will work
 
 
-### facts are nothing but a properties which will act as a predefined variable" that is why we have not declared variable here"
+### facts are nothing but a properties which will act as a "predefined variable" that is why we have not declared variable here"
 
    

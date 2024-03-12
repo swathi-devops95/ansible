@@ -6,7 +6,7 @@
    - name: check tomcat is running or not
      ansible.builtin.shell: ps -ef | grep java | grep -v grep
      register: OUT
-     ignore_errors: yes
+     ignore_errors: yes         #ignore_errors is a key word irrespective of task is failed it will proceed with the next task
 
 
    - name: starting tomcat
