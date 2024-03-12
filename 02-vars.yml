@@ -2,7 +2,7 @@
 - name: Demo on vars usage                         #play name   
   hosts: all                                        #which includes everthing in inv file
   vars:                                             #Global variables:all the tasks of this play can access this variable
-    URL: play.google.com 
+    URL: play.google.com                            #URL=variable name,  play.google.com=value of the variable
   vars_files:
     - "{{ENV}}.yml"
   vars_prompt:
