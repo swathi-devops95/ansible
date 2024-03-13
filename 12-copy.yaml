@@ -3,6 +3,6 @@
   become: yes
   tasks:
     - name: fetching file from remote to source
-      ansible.buitin.fetch:
+      ansible.builtin.fetch:
         src: devops                                                   #file name
         dest: /home/centos/ansible/devops
