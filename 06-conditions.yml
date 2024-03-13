@@ -20,10 +20,10 @@
       when: action == true   
   
     
-    # - name: Run this only when the action variable is defined
-    #   ansible.builtin.debug:
-    #     msg: action variable is declared
-    #   when: action is defined                       #THIS WILL BE EXECUTED BECAUSE THE ACTION VARIABLE IS DECLARED
+     - name: Run this only when the action variable is defined
+       ansible.builtin.debug:
+         msg: action variable is declared
+      when: action is defined                       #THIS WILL BE EXECUTED BECAUSE THE ACTION VARIABLE IS DECLARED
 
 
     # - name: Run this only when the action variable is defined
