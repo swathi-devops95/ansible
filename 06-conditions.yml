@@ -1,7 +1,7 @@
 - name: Demo on conditions
   hosts: all
-  vars:
-    action: false
+  # vars:
+  #   action: false
   tasks:
     - name: Run this only when the system distribution is CentOS    #in our case first task will be executed because we are having centos flavored machines
       ansible.builtin.debug:
