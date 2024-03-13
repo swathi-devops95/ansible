@@ -14,4 +14,4 @@
 
    - name: printing the user details
      ansible.builtin.debug:
-       msg: OUT
+       msg: {{OUT}}
