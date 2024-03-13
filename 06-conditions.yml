@@ -3,7 +3,7 @@
   vars:
     action: false
   tasks:
-    - name: Run this only when the system distribution is CentOS
+    - name: Run this only when the system distribution is CentOS    #in our case first task will be executed because we are having centos flavored machines
       ansible.builtin.debug:
         msg: Welcome to {{ansible_distribution}}
       when: ansible_distribution == "CentOS"            #Here when is a condition
@@ -14,24 +14,24 @@
         msg: Welcome to {{ansible_distribution}}
       when: ansible_distribution == "Ubuntu"  
 
-    - name: Run this action
-      ansible.builtin.debug:
-        msg: Action is true
-      when: action   
+    # - name: Run this action
+    #   ansible.builtin.debug:
+    #     msg: Action is true
+    #   when: action   
   
     
-    - name: Run this only when the action variable is defined
-      ansible.builtin.debug:
-        msg: action variable is declared
-      when: action is defined                       #THIS WILL BE EXECUTED BECAUSE THE ACTION VARIABLE IS DECLARED
+    # - name: Run this only when the action variable is defined
+    #   ansible.builtin.debug:
+    #     msg: action variable is declared
+    #   when: action is defined                       #THIS WILL BE EXECUTED BECAUSE THE ACTION VARIABLE IS DECLARED
 
 
-    - name: Run this only when the action variable is defined
-      ansible.builtin.debug:
-        msg: Action variable is declared
-      when: action is not defined                 # this won be executed because action variable is declare ,the tsk wil be skipped
+    # - name: Run this only when the action variable is defined
+    #   ansible.builtin.debug:
+    #     msg: Action variable is declared
+    #   when: action is not defined                 # this won be executed because action variable is declare ,the tsk wil be skipped
 
 
-## Older versions of ansible uses undefined, #latest version of ansible users not defined 
-# defined , not defined, true, false , succeded , failure all of them are predefined keywords as per the documentation 
+## Older versions of ansible uses undefined, #latest version of ansible uses not defined .
+# defined , not defined, true, false , succeded , failure , all of them are "predefined" keywords as per the ansible documentation .
 # Ref : https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html
