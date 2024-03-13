@@ -5,11 +5,11 @@
    
    - name: checking the user ID
      ansible.builtin.shell: id
-     register: OUT
+     register: OUT            #here we are registering the out put of a shellcommand we are storing it in a variable called OUT
 
    - name: printing the user details
      ansible.builtin.debug:
-        msg: "{{OUT.stdout}}"
+        msg: "{{OUT.stdout}}"       #HERE WE ARE PRINTING THE VARIABLE OUT
 
 
   
