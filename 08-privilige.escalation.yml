@@ -7,11 +7,9 @@
      ansible.builtin.shell: id
      register: OUT
 
-  #  - name: printing the user details
-  #    ansible.builtin.debug:
-  #      msg: "{{OUT.stdout}}"
-
-
    - name: printing the user details
-     ansible.builtin.debug:
-       msg: "{{OUT}}"
+      ansible.builtin.debug:
+        msg: "{{OUT.stdout}}"
+
+
+  
