@@ -4,10 +4,13 @@
       state: present
 
   - name: Download and extracting frontend
-    ansible.builtin.unarchive:
+    ansible.builtin.unarchive:            #ANSIBLE.BUILTIN.UNARCHIVE dos both jobs downloads and extracts the code or files
       src: https://github.com/stans-robot-project/frontend/archive/main.zip
-      dest: /tmp
+      dest: /tmp                  #it is going to unzip the file in /tmp
       remote_src: yes           #downloads the file and extract  on top of remote server/machine
+                                #the local ansible machine will not have the downloaded copy
+                                #if you remove remote_src :yes then it is going to download on local machine
+                                #but now as remote source is yes it will download in remote nodes
 
 
   - name: performing cleaning
@@ -19,7 +22,7 @@
     ansible.builtin.copy:
       src: /tmp/frontend-main/static/
       dest: /usr/share/nginx/html 
-      remote_src: yes           #this ensures source file is to copy on remote manchine
+      remote_src: yes           #this ensures source file is to copy on remote manchine,if not 
 
 
   - name: copying proxy file
@@ -34,5 +37,5 @@
       enabled: yes
       daemon_reload: yes
 
-  - name: configuring server name
-    ansible.builtin.shell: set-hostname {{COMPONENT}}
+  # - name: configuring server name
+  #   ansible.builtin.shell: set-hostname {{COMPONENT}}

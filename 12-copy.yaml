@@ -1,8 +1,0 @@
-- name: fetching file 
-  hosts: all
-  become: yes
-  tasks:
-    - name: fetching file from remote to source
-      ansible.builtin.fetch:
-        src: devops                                                   #file name
-        dest: /home/centos/devops
