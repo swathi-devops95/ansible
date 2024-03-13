@@ -8,7 +8,7 @@
      register: OUT
 
    - name: printing the user details
-      ansible.builtin.debug:
+     ansible.builtin.debug:
         msg: "{{OUT.stdout}}"
 
 
